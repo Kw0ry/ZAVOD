@@ -1,6 +1,6 @@
 public abstract class Zavod {
 
-    public boolean del_zavod(int id){
+    public boolean delzavod(int id){
         return true;
     };
 
