@@ -1,14 +1,14 @@
 public abstract class Worker {
     
-    public boolean Worker_fatigue(int id){
+    public boolean workerfatigue(int id){
         return true;
     };
 
-    public boolean Making_demands(int id){
+    public boolean makingdemands(int id){
         return true;
     };
 
-    public boolean Resign(int id){
+    public boolean resign(int id){
         return true;
     };
 }
