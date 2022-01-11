@@ -1,6 +1,6 @@
 public class Location {
 
-    public boolean Map(int id){
+    public boolean map(int id){
         return true;
     };
 
