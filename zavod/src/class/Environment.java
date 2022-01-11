@@ -1,6 +1,6 @@
 public class Environment {
     
-    public boolean Contamination(int id){
+    public boolean contamination(int id){
         return true;
     };
 
