@@ -1,18 +1,18 @@
 public class Activists {
     
-    public boolean Monitor_the_environment(int id){
+    public boolean monitor_the_environment(int id){
         return true;
     };
 
-    public boolean Attack_on_the_factory(int id){
+    public boolean attack_on_the_factory(int id){
         return true;
     };
 
-    public boolean Retreat(int id){
+    public boolean retreat(int id){
         return true;
     };
 
-    public boolean Making_demands(int id){
+    public boolean making_demands(int id){
         return true;
     };
 
