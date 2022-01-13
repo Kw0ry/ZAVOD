@@ -1,9 +1,9 @@
 package com.company.models;
-import com.company.abcpkg.FactoryABC;
+import com.company.abcpkg.Factory;
 
-public class Factory extends FactoryABC {
+public class FactoryImpl extends Factory {
 
-    Factory (float quantityOfMoney, float factoryPollution) {
+    FactoryImpl(float quantityOfMoney, float factoryPollution) {
         super(quantityOfMoney, factoryPollution);
     }
 

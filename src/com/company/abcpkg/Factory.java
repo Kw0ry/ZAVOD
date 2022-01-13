@@ -1,10 +1,10 @@
 package com.company.abcpkg;
 
-abstract public class FactoryABC {
+public abstract class Factory {
     public float quantityOfMoney;
     public float factoryPollution;
 
-    public FactoryABC (float quantityOfMoney, float factoryPollution){
+    public Factory (float quantityOfMoney, float factoryPollution){
         this.quantityOfMoney = quantityOfMoney;
         this.factoryPollution = factoryPollution;
     }

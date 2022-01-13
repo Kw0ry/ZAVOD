@@ -1,9 +1,9 @@
 package com.company;
 
-import com.company.models.Factory;
+import com.company.models.FactoryImpl;
 
 public class App {
     void getFactoryInfo() {
-        System.out.println(Factory.info());
+        System.out.println(FactoryImpl.info());
     }
 }
