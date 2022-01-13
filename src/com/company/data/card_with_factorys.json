@@ -2,24 +2,22 @@
     {
         "cards": [
             {
-                "name": "name1",
-                "question": "question1"
+                "name": "Завод по производству машин",
+                "question": "Хотите ли вы повысить производительность?"
             },
             {
-                 "name": "name2",
-                 "question": "question2"
+                 "name": "Завод по производству стиральных машин",
+                 "question": "Хотите ли вы понизить производительность?"
             }
         ],
         "perks": [
             {
-                "name": "name 1",
-                "quantityOfMoney": 32,
-                "factoryPollution": -12
+                "quantity_of_money": 32,
+                "factory_pollution": -5
             },
             {
-                "name": "name 2",
-                "quantityOfMoney": -35,
-                "factoryPollution": 34
+                "quantity_of_money": -35,
+                "factory_pollution": 34
             }
         ]
     }
