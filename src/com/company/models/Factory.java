@@ -1,5 +1,5 @@
 package com.company.models;
-import com.company.abspkg.FactoryABC;
+import com.company.abcpkg.FactoryABC;
 
 public class Factory extends FactoryABC {
 

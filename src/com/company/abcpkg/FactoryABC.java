@@ -1,4 +1,4 @@
-package com.company.abspkg;
+package com.company.abcpkg;
 
 abstract public class FactoryABC {
     public float quantityOfMoney;
