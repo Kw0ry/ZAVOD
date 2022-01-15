@@ -1,5 +1,5 @@
 package com.company.models;
 
-public class SystemOfRandomEvents {
+public class SystemOfRandomEvent {
     // TODO: система случ. соб.
 }

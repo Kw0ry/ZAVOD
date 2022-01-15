@@ -1,5 +1,5 @@
 package com.company.abcpkg;
 
 abstract public class People {
-    // TODO: Расписать пиполя.
+    // TODO: Расписать поля.
 }
