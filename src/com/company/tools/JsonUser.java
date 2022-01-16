@@ -1,4 +1,4 @@
-package com.company.data.tools;
+package com.company.tools;
 
 public class JsonUser {
     // todo: расписать работу с сохранением данных в JSON файл ( данные о пользовательской статистике )

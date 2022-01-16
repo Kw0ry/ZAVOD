@@ -1,4 +1,4 @@
-package com.company.data.tools;
+package com.company.tools;
 
 public class JsonActivist {
     // todo: расписать работу с чтением данных с JSON файла ( данные об активистах )
