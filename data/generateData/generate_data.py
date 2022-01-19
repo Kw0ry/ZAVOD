@@ -2,7 +2,8 @@ from os import path
 from json import dump, loads
 from pprint import pprint 
 
-class FactoryGeneration:
+
+class DataGeneration:
     """Генерация данных для "Завода"."""
     def __init__(self, 
                  path_to_json_file: str=path.join('..', 'card_with_factories.json'),
@@ -16,20 +17,24 @@ class FactoryGeneration:
         elif index == 2:
             return {"question": value.strip()}
         elif index == 3:
-            values = value.split(',')
+            return {"influences": value.strip()}
+        elif index == 4:
+            values = [v.strip() for v in value.split(',')]
             data = {"yes": {
                             "worker_fatigue": int(values[0][1:]),
                             "amount_of_money": int(values[1]),
-                            "pollution": int(values[2][:-2])
+                            "pollution": int(values[2]),
+                            "answer": values[3][:-1]
                         }
                     }
             return data
-        elif index == 4:
-            values = value.split(',')
+        elif index == 5:
+            values = [v.strip() for v in value.split(',')]
             data = {"no": {
                            "worker_fatigue": int(values[0][1:]),
                            "amount_of_money": int(values[1]),
-                           "pollution": int(values[2][:-2])
+                           "pollution": int(values[2]),
+                           "answer": values[3][:-1]
                         }
                     }
             return data
@@ -37,11 +42,13 @@ class FactoryGeneration:
     def get_need_version(self, data: list):
         new_format_data_list = []
         for values in data:
+            print(values)
             new_format = {
                 'name': values[0]['name'],
                 'question': values[1]['question'],
-                'yes': values[2]['yes'],
-                'no': values[3]['no'],
+                'influences': values[2]['influences'],
+                'yes': values[3]['yes'],
+                'no': values[4]['no'],
             }
             new_format_data_list.append(new_format)
         return new_format_data_list
@@ -50,7 +57,7 @@ class FactoryGeneration:
         new_data = []
         some_data = []
         for index, value in enumerate(data):
-            if index % 4 == 0 and index != 0:
+            if index % 5 == 0 and index != 0:
                 new_data.append(some_data)
                 some_data = []
             some_data.append(value)
@@ -87,37 +94,17 @@ class FactoryGeneration:
         return self.preprocessing_data(data)
 
 
-def write_data_to_list(json_data: dict, txt_data:list, 
-                       influences: int, prev_index: int,
-                       next_index: int):
-    json_data['factories']\
-             ['influences']\
-             [f'influences_{influences}'] = txt_data[prev_index:next_index]
+def write_data_to_list(json_data: dict, txt_data:list):
+    json_data['factories'] = txt_data[:]
     return json_data
 
 
 def main():
-    factory_generation = FactoryGeneration()
-    data_from_json = factory_generation.read_json_file()
-    data_from_txt = factory_generation.read_data_from_txt_file()
-    count_factory_tier_one = 15
-    count_factory_tier_two = 8
-    count_factory_tier_three = 5
-    for index, my_index in enumerate((count_factory_tier_one, 
-                                      count_factory_tier_two,
-                                      count_factory_tier_three)):
-        if index == 0:
-            prev_index = 0
-            next_index = my_index
-            influences = 1
-        else:
-            prev_index = next_index
-            next_index += my_index
-            influences += 1
-        data = write_data_to_list(data_from_json, data_from_txt, 
-                                  influences, prev_index, next_index)
-    factory_generation.write_data_to_json_file(data)
-
+    data_generation = DataGeneration()
+    data_from_json = data_generation.read_json_file()
+    data_from_txt = data_generation.read_data_from_txt_file()
+    data = write_data_to_list(data_from_json, data_from_txt)
+    data_generation.write_data_to_json_file(data)
 
 
 if __name__ == "__main__":
